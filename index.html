@@ -990,6 +990,7 @@
             color: white;
             font-weight: 600;
         }
+        
         .avis-stars {
             color: #FFD700;
             margin-top: 5px;
@@ -2261,14 +2262,14 @@
         // Fonction pour rediriger vers WhatsApp avec un message
         function redirectToWhatsApp(message) {
             const encodedMessage = encodeURIComponent(message);
-            window.open(https://wa.me/${whatsappNumber}?text=${encodedMessage}, '_blank');
+            window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
         }
         
         // Fonction pour envoyer un email
         function sendEmail(subject, body) {
             const encodedSubject = encodeURIComponent(subject);
             const encodedBody = encodeURIComponent(body);
-            window.open(mailto:${emailAddress}?subject=${encodedSubject}&body=${encodedBody}, '_blank');
+            window.open(`mailto:${emailAddress}?subject=${encodedSubject}&body=${encodedBody}`, '_blank');
         }
         
         // Gestion des onglets du processus
@@ -2289,7 +2290,7 @@
                 
                 // Afficher le contenu correspondant
                 const tabId = this.getAttribute('data-tab');
-                document.getElementById(${tabId}-process).classList.add('active');
+                document.getElementById(`${tabId}-process`).classList.add('active');
             });
         });
         
@@ -2322,10 +2323,10 @@
             const serviceTypeText = document.getElementById('service-type').options[document.getElementById('service-type').selectedIndex].text;
             
             // Création du message pour WhatsApp
-            const whatsappMessage = Kostenlose Beratung angefragt:%0A%0AName: ${name}%0ATelefon: ${phone}%0AEmail: ${email || 'Nicht angegeben'}%0AOption: ${serviceTypeText}%0AFührerschein: ${serviceText}%0ANachricht: ${message || 'Keine zusätzliche Nachricht'};
+            const whatsappMessage = `Kostenlose Beratung angefragt:%0A%0AName: ${name}%0ATelefon: ${phone}%0AEmail: ${email || 'Nicht angegeben'}%0AOption: ${serviceTypeText}%0AFührerschein: ${serviceText}%0ANachricht: ${message || 'Keine zusätzliche Nachricht'}`;
             
             // Redirection vers WhatsApp
-            window.open(https://wa.me/${whatsappNumber}?text=${whatsappMessage}, '_blank');
+            window.open(`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`, '_blank');
             
             // Réinitialisation du formulaire
             document.getElementById('contactForm').reset();
@@ -2398,4 +2399,4 @@
         });
     </script>
 </body>
-</html>
+    </html>
